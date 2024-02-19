@@ -45,7 +45,7 @@ resource "aws_sfn_state_machine" "my_state_machine" {
             Next         = "RefundHandler"
           }
         ]
-      },                                                                                                                                                                                                                                   
+      },
       PurchaseHandler = {
         Type       = "Task",
         Resource   = "arn:aws:states:::lambda:invoke",
@@ -98,4 +98,8 @@ resource "aws_sfn_state_machine" "my_state_machine" {
             BackoffRate    = 2
           }
         ],
-        Next   
+        Next  = "ResultHandler"
+      }
+    }
+  })
+}
