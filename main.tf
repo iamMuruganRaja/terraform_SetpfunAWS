@@ -7,7 +7,7 @@ provider "aws" {
 
 # Define the IAM role for Step Functions
 resource "aws_iam_role" "step_function_role" {
-  name               = "step-function-role"
+  name               = "mystep-function-role"
   assume_role_policy = jsonencode({
     Version   = "2012-10-17",
     Statement = [
